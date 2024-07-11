@@ -1,0 +1,23 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  /* App.css veya yeni oluşturduğunuz global bir CSS dosyası */
+body {
+  background-color: #ffffff; /* Örnek olarak gri arka plan rengi */
+  font-family: Arial, sans-serif; /* Örnek olarak font ailesi tanımı */
+  margin: 0; /* Sayfa kenar boşluğunu sıfırlamak için */
+  padding: 0; /* Sayfa içeriği etrafındaki boşluğu sıfırlamak için */
+}

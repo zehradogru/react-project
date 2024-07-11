@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from 'react';
+import Navbar from './components/Navbar/Navbar'; // Navbar component'ını import edin
+import HomePage from './components/Pages/HomePage/HomePage';
+import InfluencersPage from './components/Pages/InfluencersPage/InfluencersPape.js'; // Doğru yola gir
+import BoardPage from './components/Pages/BoardPage/BoardPage.js';
+import LoginPage from './components/Pages/LoginPage/LoginPage.js';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Switch yerine Routes kullan
+import './App.css'; // Genel CSS dosyanızı import edin
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar /> {/* Navbar'ı buraya ekleyin */}
+        <main>
+          <Routes> {/* Switch yerine Routes kullan */}
+            <Route path="/" element={<HomePage />} exact />
+            <Route path="/influencers" element={<InfluencersPage />} />
+            <Route path="/board" element={<BoardPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

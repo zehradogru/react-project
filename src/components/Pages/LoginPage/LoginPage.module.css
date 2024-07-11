@@ -1,0 +1,101 @@
+/* LoginPage.module.css */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box; /* Padding'in genişliği dahil olmasını sağlar */
+}
+
+.login-form {
+  background-color: #ffffff; /* Form arka plan rengi */
+  padding: 20px;
+  border: 0.5px solid #ccccccb1;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  width: 380px; /* Form genişliği */
+  height: 500px;
+  text-align: center; /* Formu ortala */
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.login-form label {
+  display: block;
+  text-align: left; /* Label'leri sola hizala */
+  margin-left: 15px;
+  font-size: 0.95rem;
+}
+
+.login-form input {
+  width: calc(100% - 50px);
+  height: 25px; 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.login-form button {
+  width: calc(100% - 30px);
+  height: 40px;
+  padding: 10px;
+  background-color: #36506c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #5c95d1;
+}
+
+.forgot-password {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  margin-left: 15px;
+}
+
+.forgot-password a {
+  color: #36506c;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #5c95d1;
+  text-decoration: underline;
+}
+
+.signup-link {
+  text-align: center; /* Linkleri ortala */
+  font-size: 0.9rem;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.signup-link p {
+  margin-bottom: 10px;
+}
+
+.signup-link a {
+  color: #36506c;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.signup-link a:hover {
+  color: #5c95d1;
+  text-decoration: underline;
+}

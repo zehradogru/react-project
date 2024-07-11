@@ -1,0 +1,61 @@
+/* SearchButton.module.css */
+
+.search-container {
+  display: flex;
+  flex-direction: column; /* Dikey yönde sıralama */
+  align-items: center; /* Öğeleri ortala */
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* İçindeki öğeleri ortala */
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 400px; /* Sabit bir genişlik belirledim, siz isteğinize göre ayarlayabilirsiniz */
+  height: 30px; /* Buton ile aynı yükseklik */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-button {
+  width: 80px; /* Sabit bir genişlik belirledim, siz isteğinize göre ayarlayabilirsiniz */
+  height: 50px; /* Aynı yükseklik */
+  padding: 10px;
+  background-color: #36506c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #5c95d1;
+}
+
+.filter-options {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap; /* Filtrelerin alt alta sıralanması için */
+  justify-content: center; /* Filtreleri ortala */
+  margin-top: 10px;
+}
+
+.filter-options label {
+  margin-right: 10px; /* Sağ boşluk */
+  margin-left: 10px; /* Sol boşluk */
+}
+
+.filter-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px; /* Filtreler arası boşluk */
+}
