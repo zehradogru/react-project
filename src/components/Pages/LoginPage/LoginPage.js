@@ -40,11 +40,11 @@ const LoginPage = () => {
           required
         />
         <div className={styles['forgot-password']}>
-          <a href="#" onClick={handleForgotPassword}>Forgot password?</a>
+          <a href="/forgotpassword" onClick={handleForgotPassword}>Forgot password?</a>
         </div>
         <button type="submit">Log in</button>
         <div className={styles['signup-link']}>
-        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        <p>Don't have an account? <a href="/sign-up">Sign up</a></p>
       </div>
       </form>
     </div>

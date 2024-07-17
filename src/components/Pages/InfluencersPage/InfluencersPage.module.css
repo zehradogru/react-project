@@ -1,50 +1,57 @@
 /* InfluencerPage.module.css */
 
 .influencer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Kartlar arası boşluk */
-    padding: 20px; /* Liste çevresindeki boşluk */
-  }
-  
-  .header-row {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f0f0f0; /* Başlık arka plan rengi */
-    padding: 10px 20px; /* Başlık içindeki boşluk */
-    border-bottom: 1px solid #ccc; /* Başlık altında çizgi */
-  }
-  
-  .header-item {
-    font-weight: bold;
-  }
-  
-  .influencer-card {
-    display: flex;
-    gap: 20px; /* Kart içindeki öğeler arası boşluk */
-    padding: 20px; /* Kart içindeki boşluk */
-    border: 1px solid #ccc; /* Kartın çerçevesi */
-    border-radius: 8px; /* Kartın köşe yuvarlaklığı */
-    background-color: #f9f9f9; /* Kartın arka plan rengi */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Kartlara hafif bir gölge ekler */
-  }
-  
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .info-item {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .platform, .category {
-    padding: 5px 10px;
-    border-radius: 15px; /* Etiketlerin köşe yuvarlaklığı */
-    background-color: #e0e0e0; /* Etiketlerin arka plan rengi */
-    font-size: 14px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Kartlar arası boşluk */
+  padding: 20px; /* Liste çevresindeki boşluk */
+  margin-left: 60px; /* Soldan boşluk */
+  margin-right: 60px; /* Sağdan boşluk */
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0; /* Başlık arka plan rengi */
+  padding: 10px 20px; /* Başlık içindeki boşluk */
+  border-bottom: 1px solid #ccc; /* Başlık altında çizgi */
+  margin-left: 20px; /* Soldan boşluk */
+  margin-right: 20px; /* Sağdan boşluk */
+}
+
+.header-item {
+  font-weight: bold;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.influencer-card {
+  display: flex;
+  gap: 20px; /* Kart içindeki öğeler arası boşluk */
+  padding: 20px; /* Kart içindeki boşluk */
+  border: 1px solid #ccc; /* Kartın çerçevesi */
+  border-radius: 8px; /* Kartın köşe yuvarlaklığı */
+  background-color: #f9f9f9; /* Kartın arka plan rengi */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Kartlara hafif bir gölge ekler */
+  margin-left: 20px; /* Soldan boşluk */
+  margin-right: 20px; /* Sağdan boşluk */
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.info-item {
+  flex: 1;
+  text-align: center;
+}
+
+.platform, .category {
+  padding: 5px 10px;
+  border-radius: 15px; /* Etiketlerin köşe yuvarlaklığı */
+  background-color: #e0e0e0; /* Etiketlerin arka plan rengi */
+  font-size: 14px;
+}

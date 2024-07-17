@@ -6,6 +6,7 @@ import HomePage from './components/Pages/HomePage/HomePage';
 import InfluencersPage from './components/Pages/InfluencersPage/InfluencersPape.js'; // Doğru yola gir
 import BoardPage from './components/Pages/BoardPage/BoardPage.js';
 import LoginPage from './components/Pages/LoginPage/LoginPage.js';
+import SignUpPage from './components/Pages/LoginPage/SignUpPage/SignUpPage.js'; 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Switch yerine Routes kullan
 import './App.css'; // Genel CSS dosyanızı import edin
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/influencers" element={<InfluencersPage />} />
             <Route path="/board" element={<BoardPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
           </Routes>
         </main>
       </div>

@@ -45,6 +45,9 @@ const influencers = [
 const InfluencerPage = () => {
   return (
     <div className={styles['influencer-list']}>
+      <p className={styles['description']}>
+        Burada popüler influencer'ların listesini bulabilirsiniz. Her bir influencer'ın platformları, kategorileri ve takipçi sayıları ile ilgili bilgileri inceleyebilirsiniz.
+      </p>
       <div className={styles['header-row']}>
         <p className={styles['header-item']}>İsim</p>
         <p className={styles['header-item']}>Platform</p>
