@@ -1,69 +1,149 @@
-/* Navbar.module.css */
+/* Navbar stil dosyası */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    color: rgb(67, 67, 67);
-    padding: 4px 100px; /* Sağdan ve soldan 150px boşluk */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Alt kenara gölge ekleme */
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    margin-right: 20px;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center; /* Dikey hizalamayı düzenler */
-    margin-right: auto; /* Öğeleri sola hizalar */
-  }
-  
-  .nav-links li {
-    margin-right: 30px; /* Öğeler arasında boşluk bırakır */
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: rgb(77, 77, 77);
-    transition: color 0.3s ease;
-    font-size: 0.9rem; /* Yazı boyutunu ayarla */
-  }
-  
-  .nav-links a:hover {
-    color: #f0f0f0;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: rgb(67, 67, 67);
+  padding: 4px 100px; /* Sağdan ve soldan 100px boşluk */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Alt kenara gölge ekleme */
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Dikey hizalamayı düzenler */
+  margin-right: auto; /* Öğeleri sola hizalar */
+}
+
+.nav-links li {
+  margin-right: 30px; /* Öğeler arasında boşluk bırakır */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(77, 77, 77);
+  transition: color 0.3s ease;
+  font-size: 0.9rem; /* Yazı boyutunu ayarla */
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
 .auth-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-  }
-  
-  .auth-links li {
-    margin-left: 10px; /* Öğeler arasında boşluk bırakır */
-  }
-  
-  .auth-links a {
-    text-decoration: none;
-    color: #666666; /* Gri tonunda yazı rengi */
-    background-color: #ffffff; /* Beyaz arka plan */
-    padding: 10px 10px;
-    border-radius: 10px; /* Köşeleri daha yuvarlak yap */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border: 1px solid #cccccc; /* Hafif gri kenarlık */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Metni yatayda ortala */
-    width: 40px; /* Kutunun genişliği */
-    height: 20px; /* Kutunun yüksekliği */
-    font-size: 0.9rem; /* Yazı boyutunu ayarla */
-  }
-  
-  .auth-links a:hover {
-    background-color: #f0f0f0; /* Açık gri arkaplan */
-    color: #333333; /* Koyu gri yazı rengi */
-  }
-  
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.auth-links li {
+  margin-left: 10px; /* Öğeler arasında boşluk bırakır */
+}
+
+.auth-links a {
+  text-decoration: none;
+  color: #666666; /* Gri tonunda yazı rengi */
+  background-color: #ffffff; /* Beyaz arka plan */
+  padding: 10px 10px;
+  border-radius: 10px; /* Köşeleri daha yuvarlak yap */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #cccccc; /* Hafif gri kenarlık */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Metni yatayda ortala */
+  width: 40px; /* Kutunun genişliği */
+  height: 20px; /* Kutunun yüksekliği */
+  font-size: 0.9rem; /* Yazı boyutunu ayarla */
+}
+
+.auth-links a:hover {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+.profile-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 160px;
+}
+
+.profile-dropdown ul {
+  list-style: none;
+  padding: 10px;
+  padding-right: 20px; /* Sağ kenara iç boşluk ekleme */
+  display: flex; /* Öğeleri yatay hizalar */
+  flex-direction: column; /* Dikey hizalama */
+  align-items: center; /* Öğeleri dikeyde ortala */
+  justify-content: center; /* Öğeleri yatayda ortala */
+}
+
+.profile-dropdown li {
+  margin-bottom: 10px;
+}
+
+.profile-dropdown a {
+  text-decoration: none;
+  color: #333333;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  width: 120px;
+  border: transparent;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease; /* geçiş efekti */
+}
+
+.profile-dropdown a:hover {
+  color: #d1d1d2;
+  background-color: #757676;
+}
+
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  display: none;
+}
+
+.profile-overlay.active {
+  display: block;
+}
+
+.profile-dropdown button {
+  text-decoration: none;
+  color: #333333;
+  font-size: 0.9rem;
+  width: 150px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: transparent;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.profile-dropdown button:hover {
+  color: #d1d1d2;
+  background-color: #757676;
+}
+

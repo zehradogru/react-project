@@ -1,23 +1,73 @@
-// Navbar.js
+import React, { useState, useEffect, useRef } from 'react';
+import styles from './Navbar.module.css';
+import { Link, useNavigate } from 'react-router-dom';
 
-import React from 'react';
-import styles from './Navbar.module.css'; // Navbar için CSS dosyasını import edin (ister modül CSS olarak, ister global CSS olarak)
+const Navbar = ({ isLoggedIn, userInfo, onLogout }) => {
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const navigate = useNavigate();
+  const profileMenuRef = useRef(null);
 
-const Navbar = () => {
+  // drop down menu kapatma
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) {
+        setShowProfileMenu(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [profileMenuRef]);
+
+  // Profil ismini tıklayarak menüyü açma işlemi
+  const handleProfileClick = () => {
+    setShowProfileMenu(!showProfileMenu);
+  };
+
+  // çıkış
+  const handleLogoutClick = () => {
+    onLogout();
+    setShowProfileMenu(false);
+    navigate('/');
+  };
+
+  // ilk harf
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        {/* Logo veya site adı */}
-        <span>My App</span>
+        <Link to="/">HOME</Link>
       </div>
       <ul className={styles['nav-links']}>
-        <li><a href="/">Home Page</a></li>
-        <li><a href="/influencers">Influencers</a></li>
-        <li><a href="/board">Board</a></li>
+        <li><Link to="/influencers">Influencers</Link></li>
+        <li><Link to="/board">Board</Link></li>
       </ul>
       <ul className={styles['auth-links']}>
-        <li><a href="/login">Log in</a></li>
+        {isLoggedIn ? (
+          <li className={styles['profile-menu']} ref={profileMenuRef}>
+            <span onClick={handleProfileClick}>
+              {userInfo ? `${capitalizeFirstLetter(userInfo.name)} ${capitalizeFirstLetter(userInfo.surname)}` : 'Profile'}
+            </span>
+            {showProfileMenu && (
+              <div className={styles['profile-dropdown']} ref={profileMenuRef}>
+                <ul>
+                  <li><Link to="/profile">View Profile</Link></li>
+                  <li><button onClick={handleLogoutClick}>Log out</button></li>
+                </ul>
+              </div>
+            )}
+          </li>
+        ) : (
+          <li><Link to="/login">Log in</Link></li>
+        )}
       </ul>
+      {showProfileMenu && (
+        <div className={styles['profile-overlay']} onClick={() => setShowProfileMenu(false)} />
+      )}
     </nav>
   );
 };

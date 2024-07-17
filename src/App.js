@@ -1,27 +1,41 @@
-// src/App.js
-
-import React from 'react';
-import Navbar from './components/Navbar/Navbar'; // Navbar component'ını import edin
+// App.js
+import React, { useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
 import HomePage from './components/Pages/HomePage/HomePage';
-import InfluencersPage from './components/Pages/InfluencersPage/InfluencersPape.js'; // Doğru yola gir
-import BoardPage from './components/Pages/BoardPage/BoardPage.js';
-import LoginPage from './components/Pages/LoginPage/LoginPage.js';
-import SignUpPage from './components/Pages/LoginPage/SignUpPage/SignUpPage.js'; 
+import InfluencersPage from './components/Pages/InfluencersPage/InfluencersPage';
+import BoardPage from './components/Pages/BoardPage/BoardPage';
+import LoginPage from './components/Pages/LoginPage/LoginPage';
+import SignUpPage from './components/Pages/LoginPage/SignUpPage/SignUpPage';
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Switch yerine Routes kullan
-import './App.css'; // Genel CSS dosyanızı import edin
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+
+  // giriş
+  const handleLogin = (user) => {
+    setIsLoggedIn(true);
+    setUserInfo(user);
+  };
+
+  // çıkış
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserInfo(null);
+  };
+
   return (
     <Router>
       <div className="App">
-        <Navbar /> {/* Navbar'ı buraya ekleyin */}
+        <Navbar isLoggedIn={isLoggedIn} userInfo={userInfo} onLogout={handleLogout} />
         <main>
-          <Routes> {/* Switch yerine Routes kullan */}
+          <Routes>
             <Route path="/" element={<HomePage />} exact />
             <Route path="/influencers" element={<InfluencersPage />} />
             <Route path="/board" element={<BoardPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage setIsLoggedIn={handleLogin} />} />
             <Route path="/sign-up" element={<SignUpPage />} />
           </Routes>
         </main>

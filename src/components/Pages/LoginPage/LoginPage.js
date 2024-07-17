@@ -1,27 +1,36 @@
-// src/components/LoginPage/LoginPage.js
-
+// LoginPage.js
 import React, { useState } from 'react';
 import styles from './LoginPage.module.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitted:', { email, password });
-    // Burada login işlemleri yapılabilir, örneğin API çağrısı gibi
+
+    try {
+      const response = await axios.post('http://localhost:5000/login', { email, password });
+      console.log('Login successful:', response.data);
+      setIsLoggedIn(response.data.user);
+      navigate('/');
+    } catch (error) {
+      console.error('Login error:', error.response.data);
+      alert('Invalid email or password');
+    }
   };
 
   const handleForgotPassword = () => {
-    // Forgot password işlemleri burada yapılabilir, örneğin modal açılabilir veya yeni bir sayfaya yönlendirme yapılabilir
     console.log('Forgot password clicked');
   };
 
   return (
     <div className={styles['login-container']}>
       <form className={styles['login-form']} onSubmit={handleSubmit}>
-      <h2>Logo</h2>
+        <h2>Logo</h2>
         <h2>Log in Into Your Account</h2>
         <label htmlFor="email">Email</label>
         <input
@@ -44,8 +53,8 @@ const LoginPage = () => {
         </div>
         <button type="submit">Log in</button>
         <div className={styles['signup-link']}>
-        <p>Don't have an account? <a href="/sign-up">Sign up</a></p>
-      </div>
+          <p>Don't have an account? <a href="/sign-up">Sign up</a></p>
+        </div>
       </form>
     </div>
   );
