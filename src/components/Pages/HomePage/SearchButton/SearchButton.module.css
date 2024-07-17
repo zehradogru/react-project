@@ -2,20 +2,20 @@
 
 .search-container {
   display: flex;
-  flex-direction: column; /* Dikey yönde sıralama */
-  align-items: center; /* Öğeleri ortala */
+  flex-direction: column;
+  align-items: center; 
 }
 
 .search-input-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* İçindeki öğeleri ortala */
+  justify-content: center;
   margin-bottom: 10px;
 }
 
 .search-input {
-  width: 400px; /* Sabit bir genişlik belirledim, siz isteğinize göre ayarlayabilirsiniz */
-  height: 30px; /* Buton ile aynı yükseklik */
+  width: 400px;
+  height: 30px;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -24,8 +24,8 @@
 }
 
 .search-button {
-  width: 80px; /* Sabit bir genişlik belirledim, siz isteğinize göre ayarlayabilirsiniz */
-  height: 50px; /* Aynı yükseklik */
+  width: 80px;
+  height: 50px;
   padding: 10px;
   background-color: #36506c;
   color: #fff;
@@ -42,14 +42,14 @@
 .filter-options {
   align-items: center;
   display: flex;
-  flex-wrap: wrap; /* Filtrelerin alt alta sıralanması için */
-  justify-content: center; /* Filtreleri ortala */
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 10px;
 }
 
 .filter-options label {
-  margin-right: 10px; /* Sağ boşluk */
-  margin-left: 10px; /* Sol boşluk */
+  margin-right: 10px;
+  margin-left: 10px; 
 }
 
 .filter-select {
@@ -57,5 +57,5 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 10px;
-  margin-bottom: 10px; /* Filtreler arası boşluk */
+  margin-bottom: 10px;
 }

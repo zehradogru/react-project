@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from './HomePage.module.css'; // Modül CSS dosyanızı import edin
-import SearchButton from './SearchButton/SearchButton'; // SearchButton component'ını import edin
+import styles from './HomePage.module.css'; 
+import SearchButton from './SearchButton/SearchButton';
 
 const HomePage = () => {
   const handleSearch = (searchTerm) => {
-    console.log('Arama terimi:', searchTerm);
-    // Burada arama terimine göre filtreleme yapılacak
+
+
+    
   };
 
   return (
@@ -13,7 +14,9 @@ const HomePage = () => {
       <h1 className={styles.title}>Find Influencers</h1>
       <p className={styles.description}> ---------- </p>
       <SearchButton onSearch={handleSearch} />
-      {/* Filtreleme seçenekleri ve diğer içerikler */}
+      {/* -
+      
+      */}
     </div>
   );
 };
