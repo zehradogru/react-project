@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SearchButton.module.css';
+import axios from 'axios';
 
 const SearchButton = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,14 +24,18 @@ const SearchButton = ({ onSearch }) => {
     setCity(event.target.value);
   };
 
-  const handleSearch = () => {
-    const searchFilters = {
-      searchTerm,
-      platform,
-      category,
-      city
-    };
-    onSearch(searchFilters);
+  const handleSearch = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/search', {
+        searchTerm,
+        platform,
+        category,
+        city
+      });
+      onSearch(response.data);  // Sonuçları üst bileşene ilet
+    } catch (error) {
+      console.error('Error performing search:', error);
+    }
   };
 
   return (
@@ -52,29 +57,29 @@ const SearchButton = ({ onSearch }) => {
           Platform:
           <select className={styles['filter-select']} onChange={handlePlatformChange}>
             <option value="">Tümü</option>
-            <option value="instagram">Instagram</option>
-            <option value="twitter">Twitter</option>
-            <option value="tiktok">Tiktok</option>
-            <option value="youtube">Youtube</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Twitter">Twitter</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
           </select>
         </label>
         <label>
           Kategori:
           <select className={styles['filter-select']} onChange={handleCategoryChange}>
             <option value="">Tümü</option>
-            <option value="moda">Moda</option>
-            <option value="müzik">Müzik</option>
-            <option value="gezi">Gezi</option>
-            <option value="fitness">Fitness</option>
+            <option value="Moda">Moda</option>
+            <option value="Müzik">Müzik</option>
+            <option value="Gezi">Gezi</option>
+            <option value="Fitness">Fitness</option>
           </select>
         </label>
         <label>
           Şehir:
           <select className={styles['filter-select']} onChange={handleCityChange}>
             <option value="">Tümü</option>
-            <option value="istanbul">İstanbul</option>
-            <option value="ankara">Ankara</option>
-            <option value="izmir">İzmir</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="İzmir">İzmir</option>
           </select>
         </label>
       </div>

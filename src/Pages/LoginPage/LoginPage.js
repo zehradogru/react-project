@@ -49,7 +49,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
           required
         />
         <div className={styles['forgot-password']}>
-          <a href="/forgotpassword" onClick={handleForgotPassword}>Forgot password?</a>
+          <a href="/reset-password" onClick={handleForgotPassword}>Forgot password?</a>
         </div>
         <button type="submit">Log in</button>
         <div className={styles['signup-link']}>

@@ -69,10 +69,11 @@ const SignUpPage = () => {
           required
         />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
 };
 
 export default SignUpPage;
+

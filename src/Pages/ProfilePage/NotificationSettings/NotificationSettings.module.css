@@ -1,0 +1,37 @@
+.content {
+    padding: 20px;
+  }
+  
+  .setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .setting span {
+    flex: 1;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+  
+  button.active {
+    background-color: #007bff;
+    margin-left: auto;
+  }
+  
+  button.inactive {
+    background-color: #ddd;
+    margin-left: auto;
+  }
+  
+  .preferences {
+    margin-top: 10px;
+  }
+  
